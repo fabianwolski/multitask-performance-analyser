@@ -33,3 +33,8 @@
   from = "/sound2.mp3"
   to = "/public/sound2.mp3"
   status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
