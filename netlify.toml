@@ -1,5 +1,6 @@
 [build]
   publish = "."
+  command = "sed -i 's/%%SUPABASE_URL%%/'\"$SUPABASE_URL\"'/g; s/%%SUPABASE_KEY%%/'\"$SUPABASE_KEY\"'/g' src/js/config.js"
 
 # Serve audio files with proper headers
 [[headers]]
@@ -34,6 +35,8 @@
   to = "/public/sound2.mp3"
   status = 200
 
+# CLIENT-SIDE ROUTING: Redirect all unknown paths to index.html
+# This allows your JavaScript to handle the UUID routing
 [[redirects]]
   from = "/*"
   to = "/index.html"

@@ -1,9 +1,8 @@
 // Configuration constants
 const CONFIG = {
-  SUPABASE_URL: "",
-  SUPABASE_KEY: "",
+  SUPABASE_URL: "%%SUPABASE_URL%%",
+  SUPABASE_KEY: "%%SUPABASE_KEY%%",
 
-  // Keyboard controls
   KEYS: {
     SPACEBAR: " ",
     ARROW_LEFT: "ArrowLeft",
