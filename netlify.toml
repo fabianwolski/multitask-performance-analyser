@@ -1,6 +1,11 @@
 [build]
   publish = "."
-  command = "sed -i 's/%%SUPABASE_URL%%/'\"$SUPABASE_URL\"'/g; s/%%SUPABASE_KEY%%/'\"$SUPABASE_KEY\"'/g' src/js/config.js"
+  command = """
+    # Replace SUPABASE_URL
+    sed -i "s|%%SUPABASE_URL%%|$SUPABASE_URL|g" src/js/config.js
+    # Replace SUPABASE_KEY
+    sed -i "s|%%SUPABASE_KEY%%|$SUPABASE_KEY|g" src/js/config.js
+  """
 
 # Serve audio files with proper headers
 [[headers]]
