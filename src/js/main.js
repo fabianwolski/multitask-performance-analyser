@@ -1,4 +1,4 @@
-// Main application controller
+// Updated main application controller (unchanged from original)
 class ExperimentApp {
   constructor() {
     this.supabaseService = new SupabaseService();
@@ -80,27 +80,7 @@ class ExperimentApp {
   }
 
   /**
-   * Start the trial phase (placeholder)
-   */
-  startTrial() {
-    // Placeholder for trial implementation
-    document.getElementById("app").innerHTML = `
-            <div class="app-content">
-                <h1>Practice Trial Starting</h1>
-                <div class="group-info">Group ${this.userData.assigned_group}</div>
-                <div class="instruction-text">
-                    Commence practice trial with feedback enabled (disabled for the actual experiment)
-                </div>
-            </div>
-            <div class="app-footer">
-                <div class="navigation-hint">Ready to begin!</div>
-            </div>
-        `;
-  }
-
-  /**
    * Handle application errors
-   * @param {Error} error - Error object
    */
   handleError(error) {
     this.currentState = CONFIG.STATES.ERROR;
@@ -122,18 +102,17 @@ class ExperimentApp {
     }
 
     document.getElementById("app").innerHTML = `
-            <div class="app-content">
-                <div class="error">
-                    <h1>Error</h1>
-                    <p>${errorMessage}</p>
-                </div>
-            </div>
-        `;
+      <div class="app-content">
+        <div class="error">
+          <h1>Error</h1>
+          <p>${errorMessage}</p>
+        </div>
+      </div>
+    `;
   }
 
   /**
    * Get current application state
-   * @returns {Object} Current state information
    */
   getState() {
     return {
