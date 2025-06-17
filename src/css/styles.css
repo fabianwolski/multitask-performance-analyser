@@ -395,3 +395,89 @@ body:focus {
   white-space: nowrap;
   border: 0;
 }
+/* Enhanced countdown styles - simplified */
+/* Add these to your existing CSS file */
+
+/* Countdown display in main container */
+.countdown-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.countdown-number {
+  font-size: 120px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: countdown-pulse 1s ease-in-out;
+  text-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+  user-select: none;
+}
+
+.countdown-start {
+  font-size: 120px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: countdown-pulse 1s ease-in-out;
+  text-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+  user-select: none;
+}
+
+@keyframes countdown-pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Confetti animation styles */
+#confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments for countdown */
+@media (max-width: 768px) {
+  .countdown-number,
+  .countdown-start {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-number,
+  .countdown-start {
+    font-size: 60px;
+  }
+}
